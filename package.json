@@ -1,0 +1,24 @@
+{
+  "name": "cpu-list-api",
+  "version": "1.0.0",
+  "description": "aplikasi API Datar CPU dengan Node Js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anugrahsyawal/cpu-list-api.git"
+  },
+  "keywords": [
+    "rest",
+    "api",
+    "nodejs"
+  ],
+  "author": "kyune",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anugrahsyawal/cpu-list-api/issues"
+  },
+  "homepage": "https://github.com/anugrahsyawal/cpu-list-api#readme"
+}
