@@ -33,3 +33,45 @@ exports.tampilam4tertentu = function (req, res) {
     }
   );
 };
+
+// menambahkan data tabel am4
+exports.tambahdataam4 = function (req, res) {
+  var name = req.body.name;
+  var performance = req.body.performance;
+  var price = req.body.price;
+  var cores = req.body.cores;
+  var frequency = req.body.frequency;
+  var cache_memory = req.body.cache_memory;
+  var tdp = req.body.tdp;
+  var video = req.body.video;
+  var graphic_speed = req.body.graphic_speed;
+  var technology = req.body.technology;
+  var ddr_support = req.body.ddr_support;
+  var code_name = req.body.code_name;
+
+  connection.query(
+    `INSERT INTO am4 (name, performance, price, cores, frequency, cache_memory, tdp, video, graphic_speed, technology, ddr_support, code_name)
+    VALUES (?,?,?,?,?,?,?,?,?,?,?,?)`,
+    [
+      name,
+      performance,
+      price,
+      cores,
+      frequency,
+      cache_memory,
+      tdp,
+      video,
+      graphic_speed,
+      technology,
+      ddr_support,
+      code_name,
+    ],
+    function (error, rows, fields) {
+      if (error) {
+        console.log(error);
+      } else {
+        response.ok("Berhasil menambahkan Data", res);
+      }
+    }
+  );
+};
