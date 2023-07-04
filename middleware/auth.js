@@ -16,7 +16,7 @@ exports.registrasi = function (req, res) {
     tanggal_daftar: new Date(),
   };
 
-  var query = "SELECT email FROM ?? WHERE ??";
+  var query = "SELECT email FROM ?? WHERE ?? = ?";
   var table = ["user", "email", post.email];
 
   query = mysql.format(query, table);
@@ -24,6 +24,7 @@ exports.registrasi = function (req, res) {
   connection.query(query, function (error, rows) {
     if (error) {
       console.log(error);
+      response.ok("Terjadi kesalahan pada server", res);
     } else {
       if (rows.length == 0) {
         var query = "INSERT INTO ?? SET ?";
@@ -32,12 +33,13 @@ exports.registrasi = function (req, res) {
         connection.query(query, post, function (error, rows) {
           if (error) {
             console.log(error);
+            response.ok("Terjadi kesalahan pada server", res);
           } else {
-            response.ok("Berhasil Menambahakan User Baru", res);
+            response.ok("Berhasil Menambahkan User Baru", res);
           }
         });
       } else {
-        response.ok("Email Tekah Terdaftar");
+        response.ok("Email Telah Terdaftar", res);
       }
     }
   });
