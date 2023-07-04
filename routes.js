@@ -11,4 +11,8 @@ module.exports = function (app) {
 
   app.route("/tambah").post(jsonku.tambahdataam4);
 
+  app.route("/ubah").put(jsonku.ubahdataam4);
+
+  app.route("/hapus").delete(jsonku.hapusdataam4);
+
 };
