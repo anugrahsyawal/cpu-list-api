@@ -20,10 +20,9 @@ exports.tampilsemuaam4 = function (req, res) {
 
 // menampilkan data processor socket am4 tertentu
 exports.tampilam4tertentu = function (req, res) {
-  const Ryzen = "Ryzen ";
   let seri = req.params.seri;
   connection.query(
-    `SELECT * FROM am4 WHERE name LIKE '%${Ryzen + seri}%';`,
+    `SELECT * FROM am4 WHERE name LIKE '%Ryzen ${seri}%';`,
     function (error, rows, fields) {
       if (error) {
         console.log(error);

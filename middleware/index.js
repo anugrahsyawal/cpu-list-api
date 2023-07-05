@@ -7,7 +7,5 @@ var router = express.Router();
 router.post("/cpu-list-api/v1/register", auth.registrasi);
 router.post("/cpu-list-api/v1/login", auth.login);
 
-// alamat yang perlu otorisasi
-router.get("/cpu-list-api/v1/rahasia", verifikasi(2), auth.halamanrahasia);
 
 module.exports = router;

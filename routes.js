@@ -1,4 +1,5 @@
 "use strict";
+const verifikasi = require("./middleware/verifikasi");
 
 module.exports = function (app) {
   var jsonku = require("./controller");
@@ -9,10 +10,9 @@ module.exports = function (app) {
 
   app.route("/tampil/:seri").get(jsonku.tampilam4tertentu);
 
-  app.route("/tambah").post(jsonku.tambahdataam4);
+  app.route("/tambah").post(verifikasi(1), jsonku.tambahdataam4);
 
-  app.route("/ubah").put(jsonku.ubahdataam4);
+  app.route("/ubah").put(verifikasi(1), jsonku.ubahdataam4);
 
-  app.route("/hapus").delete(jsonku.hapusdataam4);
-
+  app.route("/hapus").delete(verifikasi(1), jsonku.hapusdataam4);
 };
