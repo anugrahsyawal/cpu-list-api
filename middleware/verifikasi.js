@@ -25,7 +25,7 @@ function verifikasi(roles) {
             }
             if (rows.length == 1) {
               var userRole = rows[0].role;
-              if (userRole == roles) {
+              if (roles.includes(userRole)) {
                 req.auth = decoded;
                 next();
               } else {
