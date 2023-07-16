@@ -17,7 +17,7 @@ module.exports = function (app) {
   app.route("/get-amd-athlon2").get(jsonku.getDataAthlon_II);
   app.route("/get-amd-sempron").get(jsonku.getDataSempron);
   app.route("/get-amd-a").get(jsonku.getDataA);
-  app.route("/get-amd-operon").get(jsonku.getDataOpteron);
+  app.route("/get-amd-opteron").get(jsonku.getDataOpteron);
 
   app.route("/get-intel").get(jsonku.getAllDataIntel);
   app.route("/get-intel-lga1150").get(jsonku.getDataLGA1150);
